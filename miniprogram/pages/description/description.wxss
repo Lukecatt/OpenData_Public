@@ -1,0 +1,80 @@
+Page{
+    margin: 6vw;
+}
+
+.pageTitle{
+    font-size: 65rpx;
+    color: var(--mainColor);
+    font-weight: bold;
+}
+
+.oldName{
+    font-size: 50rpx;
+    color: var(--mainColor);
+}
+
+.siteImage{
+    width: 88vw;
+    border: solid 1.5px var(--mainColor);
+    border-radius: 20rpx;
+}
+
+.header{
+    margin-left: 20rpx; 
+    font-size: 40rpx;
+    font-weight: bold;
+}
+
+.type image{
+    width: 60rpx;
+}
+
+.type{
+    position: relative;
+    right: 12rpx;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 10rpx;
+}
+
+.typeText{
+    margin-left: 2vw;
+}
+
+.address{
+    margin-bottom: 10rpx;
+    display: flex;
+    justify-content: center;
+}
+
+.addressText{
+    margin-left: 3vw;
+}
+
+.address image{
+    width: 40rpx;
+}
+
+.descTitle{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.descTitle image{
+    width: 40rpx;
+}
+
+.descTitleText{
+    margin-left: 2vw;
+}
+
+.description{
+    margin-top: 20rpx;
+    margin-right: 6vw;
+    font-size: 40rpx;
+    margin-left: 20rpx;
+    word-break: break-all;
+}
+
+

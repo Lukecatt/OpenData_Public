@@ -1,0 +1,246 @@
+page{
+    padding: 0;
+    margin: 0;
+    position: fixed;
+}
+
+#header{
+    color: var(--mainColor);
+    margin: 5px 4vw 0 4vw;
+    font-weight: bold;
+    font-size: 35rpx;
+    height: 13vh;
+}
+
+.title{
+    font-size: 55rpx;
+    font-weight: bold;
+}
+
+.subtitle{
+    margin-bottom: 5px;
+}
+
+.filter{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.type{
+    padding: 8rpx 19rpx 8rpx 19rpx;
+    border: solid 1px var(--mainColor);
+    border-radius: 20px;
+    transition: 150ms;
+}
+
+.buttonOn{
+    background-color: var(--mainColor);
+    color: white;
+}
+
+#map{
+    width: 88vw;
+    height: 70vh;
+    margin: 1vh 4vw 0 4vw;
+    border: solid 2vw var(--mainColor);
+    border-radius: 10px;
+}
+
+#navBar{
+    position: fixed;
+    bottom: 1vh;
+    left: 5vw;
+    width: 90vw;
+    height: 8vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: solid 2px var(--mainColor);
+    border-radius: 10px;
+}
+
+#navBar image{
+    width: 70rpx;
+}
+
+.customCallout{
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+}
+
+.descCardAnim{
+    z-index: -2;
+    position: fixed;
+    opacity: 0;
+    width: 75vw;
+    top: 40vh;
+    left: 12.5vw;
+    background-color: white;
+    border: solid 1px #ccc;
+    border-radius: 20rpx;
+    transition: 500ms;
+}
+
+.descCard{
+    opacity: 1;
+    top: 20vh;
+    z-index: 1;
+}
+
+.descClose{
+    position: absolute;
+    top: 3rpx;
+    right: 3rpx;
+    width: 80rpx;
+    opacity: 0.5;
+}
+
+.descCardInner{
+    margin: 8vw;
+}
+
+.descImage{
+    width: 59vw;
+    border-radius: 10rpx;
+}
+
+.descName{
+    color: var(--mainColor);
+    font-size: 50rpx;
+    font-weight: bold;
+}
+
+.descType{
+    display: inline-flex;
+    justify-content: center;
+    font-weight: 300;
+}
+
+.descType image{
+    width: 45rpx;
+}
+
+.descTypeText{
+    margin-left: 2vw;
+}
+
+.descTitle{
+    display: flex;
+    justify-content: flex-start;
+    font-weight: 300;
+    margin-left: 5rpx;
+}
+
+.descTitle image{
+    width: 40rpx;
+}
+
+.descTitleText{
+    margin-left: 2vw;
+}
+
+.descCardInner button{
+    background-color: var(--mainColor);
+    color: white;
+    border-radius: 12rpx;
+}
+
+.mapOn{
+    font-weight: bold;
+}
+
+.searchOn{
+    font-weight: bold;
+}
+
+.searchOn image{
+    transition: 250ms;
+    transform: rotate(90deg);
+}
+
+.searchOff image{
+    transition: 250ms;
+}
+
+#searchPage input{
+    width: 80vw;
+    height: 4vh;
+    margin: 3vh 10vw 0 10vw;
+    border: solid 2px rgb(182, 173, 173);
+    border-radius: 2vh;
+}
+
+.navBarButton{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 26rpx;
+}
+
+/* clock loading animation */
+.loadingCaption{
+    text-align: center;
+    position: absolute;
+    top: 28%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--mainColor);
+    font-weight: 400;
+}
+
+.loadWrap{
+    width: 30px;
+    height: 30px;
+    border: solid rgba(0, 0 ,0, 0.8) 2px;
+    border-radius: 50%;
+    position: absolute;
+    top: 15%;
+    left: 46%;
+    transform: translateX(-50%);
+}
+
+.minute{
+    animation: rotation 1s linear infinite;
+}
+
+.hour{
+    animation: rotation 2s linear infinite
+}
+
+.minuteHand{
+    background: rgb(226, 156, 27);
+    width: 2px;
+    height: 15px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.hourHand{
+    background: rgba(0,0,0,0.7);
+    top: 4px;
+    width: 2px;
+    height: 12px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@keyframes rotation{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+

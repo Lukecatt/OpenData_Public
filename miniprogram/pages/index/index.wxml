@@ -1,0 +1,66 @@
+<view id="mapPage" style="display: {{ mapOn ? 'block':'none' }}">
+<view id="header">
+    <view class="title">探索</view>
+    <view class="subtitle">上海抗战时的各种历史地点</view>
+    <view class="filter">
+    标签过滤：
+        <view class="type site {{ siteButton ? 'buttonOn' : ''}}" bindtap="filterSite">历史地点</view>
+        <view class="type {{ settButton ? 'buttonOn' : ''}}" bindtap="filterSett">居住点</view>
+        <view class="type {{ roadButton ? 'buttonOn' : ''}}" bindtap="filterRoad">道路</view>
+    </view>
+</view>
+<map id="map" longitude="121.42" latitude="31.14" scale="{{ scale }}" markers="{{ siteMarkers }}" polyline="{{ roads }}" polygons="{{ settlements }}" show-location="{{ true }}" bindtouchend="displayCallout" bindmarkertap="descDisplay" bindcallouttap="descDisplay" subkey="GDKBZ-PB6K3-46I3K-YU3OJ-XOAPS-T2BYW">
+    <cover-view slot="callout">
+        <block wx:for="{{ siteMarkers }}" wx:for-item="marker" wx:key="marker.id" >
+            <cover-view class="customCallout" style="display: {{calloutVisible ? 'block' : 'none'}}" marker-id="{{ marker.id }}">
+                {{ marker.name }}
+            </cover-view>
+        </block>
+    </cover-view>
+</map>
+<view class="descCardAnim {{ descCardShow ? 'descCard':'' }}">
+    <image src="../../images/x-mark.png" class="descClose" mode="widthFix" bindtap="descClose"></image>
+    <view class="descCardInner">
+        <image src="{{ descImage }}" class="descImage" mode="widthFix" style="visibility: {{ descImageVisible ? 'visible' : 'hidden' }}"></image>
+        <view class="loading" style="visibility: {{ descImageVisible ? 'hidden' : 'visible' }}">
+            <view class="loadWrap minute">
+                <view class="minuteHand"></view>
+            </view>
+            <view class="loadWrap hour">
+                <view class="hourHand"></view>
+            </view>
+            <view class="loadingCaption">
+                图片加载中...
+            </view>
+        </view>
+        <view class="descName">{{ descName }}</view>
+        <view class="divider"></view>
+        <view class="descType">
+            <image src="{{ descTypeImage }}" mode="widthFix"></image>
+            <view class="descTypeText">{{ descType }}</view>
+        </view>
+        <view class="descTitle" wx:if="{{ descTitle }}">
+            <image src="{{ descTitleImage }}" mode="widthFix"></image>
+            <view class="descTitleText">{{ descTitle }}</view>
+        </view>
+        <view class="divider"></view>
+        <button bindtap="redirDescPage">进入详情页面</button>
+    </view>
+</view>
+</view>
+<view id="searchPage" style="display: {{ searchOn ? 'block' : 'none' }}">
+<input value="" type="text" placeholder="搜索地点" placeholder-style= "text-align: center" placeholder-class="placeholder" confirm-type="search" cursor="1" bindinput="randomFunction"></input> <!-- input cursor problem -->
+</view>
+<view id="navBar">
+    <view class="navBarButton map {{mapOn ? 'mapOn' : 'mapOff'}}" >
+        <image src="../../images/{{ mapOn ? 'map-active.svg':'map.svg' }}" mode="widthFix" bindtap="switchMap"></image>
+        地图
+    </view>
+    <view class="navBarButton search {{ searchOn ? 'searchOn' : 'searchOff'}}">
+        <image src="../../images/search.svg" mode="widthFix" bindtap="switchSearch" ></image>
+        搜索
+    </view>
+</view>
+
+
+

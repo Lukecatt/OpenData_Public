@@ -1,0 +1,20 @@
+<view class="pageTitle">{{ name }}</view>
+<view class="oldName">{{ oldName }}</view>
+<view class="divider"></view>
+<view class="container header">
+    <view class="address" wx:if="{{ address }}">
+        <image src="../../images/location-dot-solid.svg" mode="widthFix"></image>
+        <view class="addressText">{{ address }}</view>
+    </view>
+    <view class="type">
+        <image src="{{ typeImage }}" mode="widthFix"></image>
+    <view class="typeText">{{ type }}</view>
+    </view>
+    <view class="descTitle" wx:if="{{ title }}">
+            <image src="{{ titleImage }}" mode="widthFix"></image>
+            <view class="descTitleText">{{ title }}</view>
+    </view>
+</view>
+<view class="divider"></view>
+<image src="{{ imagePath }}" mode="widthFix" class="siteImage"></image>
+<view class="description">{{ description }}</view>
